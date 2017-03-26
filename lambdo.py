@@ -2,7 +2,7 @@ import docker
 import os
 
 #@profile
-def lambdocker(filename):
+def lambdo(filename):
     try:
         client = docker.from_env(version='auto')
     except Exception, e:

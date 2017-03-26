@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, jsonify, abort, make_response
 from werkzeug.utils import secure_filename
-from lambdocker import lambdocker
+from lambdo import lambdo
 # -*- coding: utf-8 -*-
 
 UPLOAD_FOLDER = 'uploads'
