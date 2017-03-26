@@ -1,2 +1,2 @@
-print "Hi Guys"
-print "Welcome to Lambocker" 
+print 'Hi Guys'
+print 'Welcome to Lambdocker'

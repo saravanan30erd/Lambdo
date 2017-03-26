@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, jsonify, abort, make_response
 from werkzeug.utils import secure_filename
+from lambdocker import lambdocker
 # -*- coding: utf-8 -*-
 
 UPLOAD_FOLDER = 'uploads'
@@ -24,7 +25,8 @@ def index():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return jsonify({'filename' : filename}), 201
+            Response = lambdocker(filename)
+            return jsonify({'filename' : filename,'output' : Response}), 200
 
 @app.errorhandler(404)
 def not_found(error):
